@@ -20,8 +20,8 @@ In order to use this tap, you need to install Homebrew.
 Then, to run a default installation, run:
 
 ```
-brew tap homebrew-ffmpeg/ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg
+brew tap aczzi/ffmpeg
+brew install aczzi/ffmpeg/ffmpeg
 ```
 
 **Note:** If you already have `ffmpeg` installed from Homebrew core, you will receive an error. You need to first run `brew uninstall ffmpeg` before you can use this tap.
@@ -31,19 +31,19 @@ brew install homebrew-ffmpeg/ffmpeg/ffmpeg
 To see the list of supported options for this formula, run:
 
 ```
-brew options homebrew-ffmpeg/ffmpeg/ffmpeg
+brew options aczzi/ffmpeg/ffmpeg
 ```
 
 Then, you can run:
 
 ```
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-<option1> --with-<option2> ...
+brew install aczzi/ffmpeg/ffmpeg --with-<option1> --with-<option2> ...
 ```
 
 If you **really** wish to install all the available options, you can run:
 
 ```
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg $(brew options homebrew-ffmpeg/ffmpeg/ffmpeg --compact)
+brew install aczzi/ffmpeg/ffmpeg $(brew options aczzi/ffmpeg/ffmpeg --compact)
 ```
 
 Note that this may install libraries for which you need extra SDKs installed, such as `--with-decklink`, or libraries which have to be installed before running the formula, such as `--with-chromaprint`.
@@ -53,7 +53,7 @@ Note that this may install libraries for which you need extra SDKs installed, su
 FFmpeg recommends installing the latest Git master version over a release. This formula builds the latest release by default, but you can install the latest Git version by adding the `--HEAD` option:
 
 ```
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --HEAD
+brew install aczzi/ffmpeg/ffmpeg --HEAD
 ```
 
 ## Updating
@@ -61,13 +61,13 @@ brew install homebrew-ffmpeg/ffmpeg/ffmpeg --HEAD
 To update Homebrew and upgrade the formula to the most recent stable release:
 
 ```
-brew update && brew upgrade homebrew-ffmpeg/ffmpeg/ffmpeg
+brew update && brew upgrade aczzi/ffmpeg/ffmpeg
 ```
 
 Or, if you are using the `HEAD` version and want to update to the latest commit:
 
 ```
-brew update && brew upgrade homebrew-ffmpeg/ffmpeg/ffmpeg --fetch-HEAD
+brew update && brew upgrade aczzi/ffmpeg/ffmpeg --fetch-HEAD
 ```
 
 ## Included libraries
@@ -134,7 +134,7 @@ This formula features the following libraries optionally:
 When installing a piece of SOFTWARE which is using this FFmpeg distribution, then you may get the following error:
 ```
 ==> Installing dependencies for SOFTWARE: ffmpeg
-Error: ffmpeg is already installed from homebrew-ffmpeg/ffmpeg!
+Error: ffmpeg is already installed from aczzi/ffmpeg!
 Please `brew uninstall ffmpeg` first."
 ```
 
@@ -143,7 +143,7 @@ Here is a workaround:
 brew uninstall ffmpeg
 brew install SOFTWARE
 brew uninstall --ignore-dependencies ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-YOUR-OPTIONS
+brew install aczzi/ffmpeg/ffmpeg --with-YOUR-OPTIONS
 ```
 
 ## Issues
