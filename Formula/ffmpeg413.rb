@@ -95,8 +95,6 @@ class Ffmpeg413 < Formula
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
       --enable-libaom
-      --enable-libdav1d
-      --enable-libmp3lame
       --enable-libopus
       --enable-libsnappy
       --enable-libtheora
@@ -120,6 +118,7 @@ class Ffmpeg413 < Formula
 
     args << "--disable-htmlpages" # The same info is accessible through the man pages.
     args << "--enable-chromaprint" if build.with? "chromaprint"
+    args << "--enable-libmp3lame" if build.with? "libmp3lame"
     args << "--enable-libbluray" if build.with? "libbluray"
     args << "--enable-libbs2b" if build.with? "libbs2b"
     args << "--enable-libcaca" if build.with? "libcaca"
@@ -151,13 +150,7 @@ class Ffmpeg413 < Formula
 
     # These librares are GPL-incompatible, and require ffmpeg be built with
     # the "--enable-nonfree" flag, which produces unredistributable libraries
-    args << "--enable-nonfree" if build.with?("decklink") || build.with?("fdk-aac") || build.with?("openssl")
-
-    if build.with? "decklink"
-      args << "--enable-decklink"
-      args << "--extra-cflags=-I#{HOMEBREW_PREFIX}/include"
-      args << "--extra-ldflags=-L#{HOMEBREW_PREFIX}/include"
-    end
+    args << "--enable-nonfree" if build.with?("fdk-aac") || build.with?("openssl")
 
     args << "--enable-version3" if build.with?("opencore-amr") || build.with?("libvmaf")
 
