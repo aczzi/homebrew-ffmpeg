@@ -6,8 +6,8 @@ Then, to run a default installation, run:
 
 ```
 brew tap aczzi/ffmpeg
-brew install aczzi/ffmpeg/ffmpeg431
 brew install aczzi/ffmpeg/ffmpeg413
+brew install aczzi/ffmpeg/ffmpeg431
 ```
 
 FROM [homebrew-ffmpeg](https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/)
