@@ -104,6 +104,7 @@ class Ffmpeg413 < Formula
       --enable-libx265
       --enable-libfontconfig
       --enable-libfreetype
+      --enable-libmysofa
       --enable-frei0r
       --enable-libass
       --enable-demuxer=dash
